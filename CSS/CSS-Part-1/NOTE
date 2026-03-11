@@ -1,0 +1,163 @@
+What is CSS ?
+It is a language that is used to describe the style of the document.
+
+BASIC FORMAT OF CSS:
+
+    selector {
+
+        property: value;
+    }
+
+    eg:
+
+    h1 {
+        color:green;
+    }
+
+HOW TO INCLUDE STYLES?
+
+Method 1: Inline styles
+Writing style directly inline on each element.
+
+<h1 style="color:red">Altaf khan</h1>
+
+Method 2: Using style tag
+Style is added using the <!-- <style> --> element in the same document.
+
+<style>
+    h1{
+        color:red;
+    }
+</style>
+
+
+Method 3: External stylesheet
+Writting a css in seprate document & linking it with a HTML file
+
+LINKING HTML WITH CSS FILE:
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+COLOR PROPERTY:
+
+Used to set the color of foreground.
+        color: green;
+        color: #ffffff;
+
+BACKGROUND COLOR PROPERTY:
+Used to set the color of background.
+
+        background-color: green;
+        background-color: #ffffff;
+
+COLOR SYSTEM:
+
+i.Named colors : color =  black;
+
+Each browser reconizes around 140 named colors.
+
+Eg:blue,black,white,green etc
+
+
+
+ii.RGB color = rgb(0,0,0);
+
+Red GREEN BLUE (0-255)
+Eg:
+
+red is rgb(255,0,0)
+black is rgb(0,0,0)
+blue is rgb(0,0,255)
+yellow is rgb(255,255,0)
+
+ 
+
+iii.Hexadecimal or Hex
+
+    color = #FFFFFF
+             R G B
+    Letters: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+
+    EG:
+    black in Hex : #000000 --> #000
+    blue in Hex : #0000ff --> #00f
+    yellow in Hex: #ffff00 --> #ff0
+    purple in Hex: #ff00ff --> #f0f
+                 :#ffa51
+
+TEXT PROPERTY:
+
+i.text-align:
+
+    text-align:left/start
+    text-align:right/end
+    text-align:centre
+    text-align:justify
+
+ii.font-weight
+    
+    scale:100 - 900 -> step 100
+    font-weight:normal; //400
+    font-weight:bold;  //700
+    font-weight:100;
+    font-weight:bolder;
+    font-weight:lighter;
+
+
+iii.text-decoration:
+
+Set the apprence of decorative lines on text underline.
+    text-decoration:underline;
+    text-decoration:overline;
+    text-decoration:line-through;
+    text-decoration:none;
+
+    text-decoration:red underline;
+    text-decoration:wavy red line-through;
+    text-decoration:dotted line-through;
+
+iv.line-height:
+
+Controls the height of the line of text.
+    line-height:normal;
+    line-height:2.5; --> 2.5 x normal
+
+
+v.letter-spacing:
+
+Controls the horizontal spacing behavior between text character. 
+    letter-spacing:normal;
+    letter-spacing:10px;
+
+
+vi.font-size:
+
+Font-size units in css.
+
+Absolute    Relative
+px               %
+pt               em
+pc               rem
+cm               ch
+mm               vh
+in               vw + many more
+
+Pixels(px):
+most commonly used absolute unit
+
+96 px = 1inch
+
+not suitable for responsive websites.
+
+font-size:50px;
+
+
+
+font-family:
+Specifies a prioritized list of one or more font family names.
+
+font-family:arial;
+font-family:avant garde,didot,sans-serif; -> backup family of fonts
+

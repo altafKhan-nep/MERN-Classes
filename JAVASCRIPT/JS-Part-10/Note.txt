@@ -1,0 +1,36 @@
+DOM EVENTS:
+      Events are signals that something has occurred.(user inputs / actions).
+
+    onclick(when an element is clicked)
+    onmouseenter(when mouse enter an element) //hover 
+    -->we can not call more than 1 function with one click 
+
+Events Listener:
+    addEventListener
+    element.addEventListener(event,callback)
+
+this In Event Listener:
+when 'this' is used in a callback of event handler/Listener of something,it refers to that something.
+
+Keyboard Event:
+    Event:
+        code:(key code)
+        key:(shows on screen)
+        eg: key = ;
+            code = Semicolon
+
+Form Event:
+     event.preventDefault(); //to prevent to open other tab(link)
+
+Extractiong Form Data:
+
+
+More Event:
+    .'change' event 
+        The change event occurs when the value of the element has been changed
+        (only works on <input> ,<textarea> and <select> elements)
+    >it look intial and final value changed
+    
+    .input Event:
+        The input event fires when the value of an <input>,<select> and <textarea>has been changed.
+    >it look every alphabet changed

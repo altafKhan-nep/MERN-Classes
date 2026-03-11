@@ -1,0 +1,44 @@
+@media (width:200px){
+    div{
+        background-color: green;
+    }
+    h1{
+        background-color: brown;
+    }
+}
+
+@media (min-width:400px){
+    div{
+        font-size: 50px;
+    }
+    h1{
+        font-size:10px;
+    }
+}
+
+@media (max-width:500px){
+    div{
+        color: bisque;
+    }
+    h1{
+        color: blueviolet;
+    }
+}
+
+@media (min-width:600px) and (max-width:1000px){
+    div{
+        border: 2px solid grey;
+        border-radius:20px;
+    }
+    h1{
+        background-color: azure;
+    }
+}
+
+@media (orientation:landscape){
+    div{
+        background-color: aquamarine;
+        color:darkcyan
+    }
+
+}

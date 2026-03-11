@@ -1,0 +1,66 @@
+MONGO RELATIONSHIP:
+
+    Relationships:
+        SQL(via foreign keys)
+        
+        one to one(1 x 1)
+        one to many(1 x n)
+        many to many(n x n)
+
+    Relationships:
+        one to many / Approch 1(one to few)
+        Store the child document inside parent.
+            {
+                _id: ObjectId('6810996ceb50c333f7926aec'),
+                username: 'Aababil',
+                addresses: [
+                { location: '221B Baker Street', city: 'London' },
+                { location: 'P13 Wallstreat', city: 'London' }
+                ],
+                __v: 0
+            }
+
+
+ONE TO MANY /APPROACH 2
+    Store a reference(pointer) to the child document inside parent.
+        (store the id of orders to the user only in the child document if you are user)
+
+
+ONE TO MANY (Populate):
+    const findCustomer = async () => {
+    let result = await Customer.find({}).populate("orders");
+    console.log(result[0]);
+    };
+    findCustomer();
+
+ONE TO MANY /APPROACH 3(ONE TO SQUILLIONS)
+    Store a reference to the parent document inside child.
+
+
+TASK:
+    https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design
+    two way referencing
+
+Note:
+    one to many
+        <100s:embeded
+        >100s:array objId references
+        >1000s:parent
+
+    denormalization:
+        Storing copy/duplicate
+
+HANDLING A DELETION:
+
+    Using Mongoose Middleware   
+
+    We can use 2 middlewares:
+        1.Pre -run before the query is executed
+        2.Post -run after the query is executed
+
+    //it helps to delete every orders linked with customer
+    customerSchema.post("findOneAndDelete",async(data)=>{
+        if(customer.orders.length){
+            let res = await Order.deleteMany({_id:{$in:data.orders}});
+        }
+    });

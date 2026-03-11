@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+    text-decoration: wavy red underline;
+    letter-spacing: 7px;
+    font-size: 50px;
+    font-family: didot,avant garde,sans-serif;
+    
+}
+h3{
+    text-align: start;
+    font-weight: lighter;
+    text-decoration: double green overline;
+
+}
+p{
+    text-align: justify;
+    font-weight: 350;
+    line-height: 1.4;
+    font-size: 17px;
+    font-family: fantasy;
+    
+}
+h2{
+    font-weight:normal;
+    text-decoration:dashed yellow line-through;
+}

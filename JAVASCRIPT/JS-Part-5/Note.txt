@@ -1,0 +1,64 @@
+JS Objects Literals:
+    Used to store keyed collections & complex entities.
+
+    property =>(key,value) pair
+    Objects are collections of properties.
+
+    Eg:
+        key                 value
+        name                "altaf" proprty-1
+        age                    20   proprty-2
+
+    const student{
+        name:"mohammad",
+        age :20,
+        gpa :3.24;
+    }
+GET VALUES:
+    let student = {
+     name:"Arif Khan"
+     marks :98;
+    };
+
+    student["name"]; //let x = "name"; //student[x];
+    student.name
+
+Js automatically converts objects key to strings.
+Even if we made the number as key ,the number will be converted to string. 
+
+Add/Ubdate value:
+
+
+Object of Objects:
+    Storing a information of multiple students.
+
+Array of Objects:
+    Storing information of multiple student.
+
+Math Object:
+ Properties:
+  Math.PI
+  Math.E
+ 
+ Methods:
+    Math.abs(n)
+    Math.pow(n)
+    Math.floor(n)
+    Math.ceil(n)
+    Math.random() //0 -1
+
+Random Integer:
+From 1 to 10:
+
+step 1: let num = Math.random()
+
+step 2: num = num * 10
+
+step 3: num = Math.floor(num)
+
+step 4: num = num + 1; // for 1 to 10 
+
+OR :let random = Math.floor( (Math.random() * 10) +1 )
+
+
+

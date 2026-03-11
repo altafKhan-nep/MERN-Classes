@@ -1,0 +1,28 @@
+img{
+    height: 540px;
+    width: 300px;
+}
+a{
+    text-decoration: none;
+}
+.btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 18px;
+    margin: 6px 4px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.97);
+    background-color: #3e8e41;
+}

@@ -1,0 +1,185 @@
+CSS GRID:(2D)
+Setting a container's display to grid will make all children grid items.
+
+    container{
+        display:grid;
+    }
+    eg:
+    <div> // Grid container
+        <h1> </h1> //grid item
+        <div> <div>//grid item
+    </div>
+
+GRID MODEL(IN PHOTO):
+
+
+GRID TEMPLAET:
+They define the lines & track sizing.
+
+    grid-template-rows:100px 100px;//it crates two rows grid
+
+    grid-template-columns:auto auto auto;//it create a two columns with divide the width equally
+
+GRID TEMPLAET(repeat):
+Repeat is used to divide all available space
+
+    grid-template-rows:repeat(count,1fr);//1 fraction of 100% width(available space)
+    grid-template-columns:repeat(count,1fr);
+
+    grid-template-rows:repeat(2,1fr);
+    or,
+    grid-template-rows:1fr 1fr;
+
+
+GRID GAPS:
+They define gaps betn the lines 
+
+    row-gap:10px;
+    column-gap:10px;
+
+    grid-gap:row-gap column-gap;
+
+    grid-gap:10px; (for both row & column)
+        or
+    grid-gap:10px;
+
+
+GRID COLUMNS:
+Define an item's starting & ending position inside the column 
+
+    grid-column-start: line-number;/ (1)
+    grid-column-end:line-number;/(3)
+
+    grid-column: start_col /end_col; /(1/3) or
+    grid-column:start_col / span number; / (1/ span 2) / span means number col need eg 2 it takes 3 column
+
+
+
+GRID ROWS:
+Define an item's starting & ending position inside the rows.
+    grid-row-start:line number(2)
+    grid-row-end:line number(4)
+
+    grid-row:grid_col / end_col ; (2/4)
+    grid-row:start_col / span number; ( 2 / span 3)
+
+COMMON PROPERTIES:
+i.for horizontal:
+    justify-items:(container)
+    justify-self:(item)
+
+ii.for vertical:
+    align-item:(container)
+    align-self:(item)
+
+shorthand:
+place-items:centre //  justify-items(centre)  align-item(centre)
+place-self:centre // justify-self(centre)  align-self(centre) 
+
+note /inline-grid //cotainer is a block so span can not come side y side 
+
+
+CSS ANIMATION:
+To animate css elements.
+
+@keyframes myName{
+    from{font-size:20px;}
+    to{font-size:300px;}
+}
+
+i.animatin-name:
+The animation-name CSS property specifies the names of one or more @keyframes at-rules that 
+describe the animation to apply to an element.
+Eg:go ,alt,slide,etc
+
+ii.animation-duration:
+The animation-duration CSS property sets the length of time that an animation takes to 
+complete one cycle.
+Eg:animation-duration: 6s;
+
+iii.animation-timing-function:
+The animation-timing-function CSS property sets how an animation progresses through the 
+duration of each cycle.
+Eg:animation-timing-function:ease/ease-in/ease-in-out/linear/step-start
+
+
+iv.animation-delay:
+The animation-delay CSS property specifies the amount of time to wait from applying the 
+animation to an element before beginning to perform the animation. The animation can start later,
+immediately from its beginning, or immediately and partway through the animation.
+Eg:animation-delay:2s;
+
+v.animation-iteration-count:
+The animation-iteration-count CSS property sets the number of times an animation sequence should
+be played before stopping.
+Eg:animation-iteration-count:0/1/infinite/unset;
+
+
+vi.animation-direction:
+The animation-direction CSS property sets whether an animation should play forward, backward,
+or alternate back and forth between playing the sequence forward and backward.
+Eg:animation-direction:normal/reverse/alternate/alternate-reverse ;
+
+
+ANIMATION SHORTHAND:
+
+    animation:myName 2s linear 3s infinite normal;
+
+% IN ANIMATION:
+
+@keyframes myName{
+    0%{ font-size:20px;}
+    50%{font-size:20px;}
+    80%{font-size:20px;}
+    100%{font-size:20px;}
+}
+
+MEDIA QUERIES:
+Help create a responsive websites.
+
+media features -width(of viewport)
+
+    @media (width:400px){
+        div{
+            background-color:red;
+        }
+        h1{
+
+        }
+    }
+
+
+    @media(min-width:400px){ 
+       div{
+            background-color:red;
+        }
+    }
+
+    @media(max-width:400px){
+       div{
+            background-color:red;
+        }
+    }
+
+@media(min-width:400px) and (max-width:500px){
+       div{
+            background-color:red;
+        }
+    }
+
+ORIENTATION  (OF VIEWPORT):
+
+@media (orientation:landscape){
+    div{
+        background:red;
+    }
+}
+
+
+Z-INDEX:
+>It decides the stack level of element.
+>Overlaping elements with a larger z-index cover those with a smaller one.
+>Position must be set(absolute/relative/fix etc) except (position:default/static)
+    z-index:auto(0)
+    z-index:1/2/....
+    z-index:-1/-2/...

@@ -1,0 +1,37 @@
+.card{
+    height: 150px;
+    width: 150px;
+    border:2px solid black;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 2px 3px 8px black;
+    transition: 2s;
+    transform:skew(2)
+}
+img{
+    width:150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.desc{
+    padding: 0px 2px 0px 2px;
+}
+.card:hover{
+   
+    height: 250px;
+    width: 250px;
+    box-shadow: 4px 6px 16px green;
+    padding: 0px 7px 0px 10px;
+    background-color:burlywood;
+}
+img:hover{
+    height: 250px;
+    width: 250px;
+}
+h3:hover{
+    text-decoration: underline brown;
+    font-size: larger;
+}
+

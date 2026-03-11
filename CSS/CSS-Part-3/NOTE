@@ -1,0 +1,188 @@
+BOX MODEL IN CSS:
+i.Height
+ii.Width
+iii.Border
+iv.Padding
+v.Margin
+
+i.Height:
+By default, its set's the content area height of the element.
+
+div {
+    height:100px;
+}
+
+ii.Width:
+By default, its set's the content area Width of the element.
+
+div {
+    Width:100px;
+}
+
+iii.Border:
+Used to set an elementborder
+
+.border-Width
+.border-style
+.border-color
+
+border shorthand:
+Width | style | color 
+
+div{
+    border:2px solid green;
+}
+
+Border Sides:
+To conterol an individual side of the box.
+
+border-left
+border-rigt
+border-top
+border-bottom
+
+div {
+    border-left-width:2px;
+    border-top:2px solid green;
+}
+
+Border radius:
+Used to round the corners of an element's outer border edge
+
+div{
+    border-radius:50px;
+    border-top-right-radius:15px;
+}
+
+div{
+    border-radius:50%;
+    
+}
+
+iv.Padding:
+
+padding-left
+padding-right
+padding-top
+padding-bottom
+
+
+div{
+    padding-left:24px;
+}
+
+Padding Shorthand:
+
+#1.for all 4 side:
+    padding:5px;
+
+#2.top & buttom | left & right:
+    padding:1px 2px;
+
+#3.top |  left & right | buttom:
+    padding:1px 2px 3px;
+
+#4. top|right|bottom|left (clockwise):
+    padding:1px 2px 3px 4px;
+
+v.Margin:
+To set  spacing on the outside the border
+
+    margin-left:
+    margin-right:
+    margin-top:
+    margin-buttom:
+
+    div{
+        margin-left:50px;
+    }
+
+
+Margin Shorthand:
+
+#1.for all 4 side:
+    margin:5px;
+
+#2.top & buttom | left & right:
+    margin:1px 2px;
+
+#3.top |  left & right | buttom:
+    margin:1px 2px 3px;
+
+#4. top|right|bottom|left (clockwise):
+    margin:1px 2px 3px 4px;
+
+
+
+INLINE VS BLOCK:
+
+Block Elements:
+Takes up the full weidth available (whole block)
+Start from new line.
+
+Inline Elements:
+Takes up only necessary weidth.
+Don't start from new line.
+
+
+DISPLAY:
+It sets the whether an  element is treated as a inline or block element and the layout used
+for children
+
+    display:inline;
+    display:block;
+    display:inline-block;(behave as inline element and style apply like block element)
+    display:none;(to hide contenet from screen)
+
+
+    inline(span):
+    -->padding & margin set left & right only. Height and weidth are not set.
+    -->Do not start on a new line 
+    -->Only use as much horizontal space as required by the content. 
+            Do not accept width and height CSS properties 
+    -->Margins will work horizontally, but not vertically 
+    -->Padding works on all sides, but the top and bottom may overlap other elements. 
+   
+
+    block(div):
+    -->Always start on a new line 
+    -->Take up as much horizontal space as possible 
+            (the full width of the container or browser window if there is no container) 
+    -->Will respect width and height CSS properties 
+    -->Horizontal and vertical margins both work 
+
+PERSENTAGE(%):
+    It is often used to define a size as relative to an element's parent .
+
+    eg:
+    width:33.33%; // relative to the parent.
+    margin-left:50%; // relative to parent size.
+
+
+EN:
+em set->parent/self
+Related to:
+Font size of the parent,in the case of typographical properties like font-size,and 
+font size of the element itself,in the case of other properties like width.
+
+eg;
+<div id= "outer">
+<div id="inner"></div>
+</div>
+
+font-size of outer is 10 px,
+if you set the font size of inner is 3em then is 3 x font-size of outer
+if you set the padding 1em of inner then padding equal to font-size of inner
+
+
+DRAWBACK OF EM:
+Snowball effect in nested elements.
+
+
+REM(ROOT EM):
+>set ATG root element
+unit:rem
+Related to:Font size of the root element.
+
+->For an HTML document, the root element is <html>. So,rem will work according to that.here 
+    font-size is changing based on <html>

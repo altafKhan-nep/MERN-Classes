@@ -1,0 +1,101 @@
+The Shell
+    mongosh //to start
+
+    $use college //to create & use a new database called "college"
+    $exit
+
+BSON Data:
+    Binary JSON 
+    
+Collections
+    Document:   Mongo stores data in form of documents(BSON docs)
+    Collection: MongoDB stores document in colections.
+
+    CRUD
+
+
+INSERT IN DB
+   i. insertOne
+        db.collection.insertOne() //insert a single document into a collection 
+        show collections
+        Eg:
+            db.student.insertOne({name:"Mohammad",marks:85})
+            db.student.find()
+
+        >if a collection does not exist ,MongoDB crates the colection when you first store date for data collection
+
+   ii.insertMany
+        Inserts multiple documents into a collection.
+        insrtMany(array of documens)
+        db.collection.insertMany()      
+    Eg:
+        db.student.insertMany({name:"Ayesha",marks:98},{name:"Halima",marks:86},{name:"Aabida",marks:97});
+
+
+FIND IN DB:
+db.collection.find()//returns everything
+
+For specific queries
+
+db.collection.find({key:value})//cursor (reference to orginal)
+db.collection.findOne({key: vlue}) //actual value
+
+
+Binay operators:
+    i.comparison:
+                $eq,$gt,$gte,$in,$lt,$lte,$ne,$nin
+
+    ii.logical:
+                $and,$not,$or,$nor
+
+Element:
+    exists->matches documents that have the specified field.
+    $type->Selects documents if a field is of the specified type.
+
+UPDATE IN DB:   
+
+    updateOne:
+        db.collection.updateOne()
+    Update at most a single document that match a specified filter even though multiple documents
+    may match the specified filter 
+    db.colection.updateOne(<filter>,<update>,<option>)
+    eg:
+        db.student.updateOne({name:"altaf"},$set:{mars:90})    
+
+    Update operators:
+        $addFields
+        $set
+        $project
+        $unset
+        $replaceRoot
+        $replaceWith
+            {$replaceWith:<replacement Document}
+
+        >update all the document that match specified filter
+         $db.collection.updateMany() 
+        
+        >Replaces at most a single document thet match a specified filter even though multiple documents 
+        even though multiples documets may match the specified filter.
+            $db.collection.replaceOne()     
+
+NESTING:
+    {
+        _id:objectId("984hfh49f39jf9jhr9fje9f"),
+        name:"Farah",
+        performance:{
+            marks:89,
+            grade:'A'
+        }
+    }           
+db.student.find({"performance.marks":89})
+
+
+DELETTE in DB:
+    i.deleteOne:
+        db.collection.deleteOne(<filter>,<options>) //delete  the first db that has  same filter
+
+    ii.deleteMany:
+        db.collection.deleteMany(<filter>,<option>) //delete all the db that has  same filter
+    
+
+    db.dropDatabase()//delete the database

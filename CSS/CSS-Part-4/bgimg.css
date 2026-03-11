@@ -1,0 +1,8 @@
+div{
+    height: 700px;
+    width: 900px;
+    background-color: bisque;
+    margin:15px auto;
+    background-image: url("domeOfRock.jpg");
+    background-size: cover;
+}

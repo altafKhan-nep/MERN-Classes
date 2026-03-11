@@ -1,0 +1,159 @@
+Object Oriented Programming:
+
+To Structure Our Code:
+
+.Prototypes
+.New operator
+.constructors
+.classes
+.keywords(extends,super)
+
+
+1.Object Prototypes:
+
+    Prototypes are the mechanism  by which Javascript Objects inherit features from one another.
+    It is like a single template object that all object inherit methods and properties from without having therir own copy.
+
+    >arr.__prototype__(reference)
+    >Array.prototype(actual object)
+    >String.prototype
+
+    Every object in JavaScript has a built-in property, which is called its 
+    prototype. The prototype is itself an object, so the prototype will have 
+    its own prototype, making what's called a prototype chain. The chain ends 
+    when we reach a prototype that has null for its own prototype.
+
+Factory Functions:
+    A functions that create objects.
+    limitation:eg:if two person is created then both have their own space for a function
+
+
+New Operator:
+    The new operator let's developers create an instance of a user-defined object type 
+    or one of the built-in object types that has constructor function.
+
+        Constructors - does not return anything & start with capital
+Eg:
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.talk = function (){
+            console.log(`Hi , My name is ${this.name}`);
+        }
+
+        let p1 = new Person("Altaf",20);
+        let p2 = new Person("Arif",14);
+        
+Class:
+    Classes are template for creating objects.
+
+    The constructor method is a special method of class for creating and initializing
+    an object instance of the class
+
+    Eg:
+            class Student{
+            constructor(name,age,marks){
+                this.name = name;
+                this.age = age;
+                this.marks = marks;
+            }
+            talk(){
+                console.log(`Hey it's me ${this.name}`);
+            }
+            }
+
+            let std1 = new Student("Altaf",20,98);
+            let std2 = new Student("Arif",14,100);
+
+Inheritance:
+    Inheritance is a mechanism that allow us to create new classes on the basis of 
+    already existing classes.
+    eG:
+            class Mammals{ //base class
+            constructor(name){
+                this.name = name;
+                this.type= "Warm-blooded";
+            }
+            eat(){
+                console.log("I am eating");
+            }
+        }
+
+        class Dog extends Mammals{
+            constructor(name){
+                super(name);
+            }
+            bark(){
+                console.log("WOOF..")
+            }
+        }
+
+        class Cat extends Mammals {
+            constructor(name){
+                super(name);
+
+            }
+            meow(){
+                console.log("Meow..")
+            }
+        }
+
+        let cat = new Cat("kitty");
+        let dog = new Dog("tommy")
+
+
+Qs1. What is Object Oriented Programming (OOP)?
+Ans.Object-Oriented Programming (OOP) is a programming paradigm in computer
+    science that relies on the concept of classes and objects. It is used to structure a
+    software program into simple, reusable pieces of code blueprints (usually called
+    classes), which are used to create individual instances of objects.
+
+Qs2. What are some benefits of using OOP in JavaScript?
+Ans. Some benefits of using OOP in JavaScript includes:
+    a. Improved code organization (structure of code)
+    b. Reusability of code
+    c. Better maintainability of code
+    d. Closeness to real-world objects
+
+Qs3. What is the difference between an object and a class in JavaScript?
+Ans. Objects in JS is a standalone entity, with properties, methods and a type. It can be
+    created directly from functions or through constructor functions.
+    Class in JS acts as a blueprint for creating objects.
+
+Qs4. What is a constructor function in JS?
+Ans. constructor function is a special function that is used to create & initialize objects
+    in JS. When a new object is created using a constructor function, it is automatically
+    assigned a set of properties and methods that are defined within the function.
+
+Qs5. What is a prototype chain in JavaScript?
+Ans. Every object in JavaScript has a built-in property, which is called its prototype.
+    The prototype is itself an object, so the prototype will have its own prototype, 
+    making what's called a prototype chain. The chain ends when we reach a prototype 
+    that has null for its own prototype.
+
+Qs6. What is the difference between a constructor and a class in JavaScript?
+Ans. A constructor is a function that creates an object, while a class is a blueprint for
+    creating objects. Classes define the framework whereas, constructor actually creates
+    the objects & initializes them.
+    (In JavaScript, classes are syntactic sugar over constructor functions.)
+
+Qs7. Why is the “new” keyword used in JavaScript?
+    Ans. The 'new' keyword is used to create an instance of an object. When used with a
+    constructor function, it creates a new object and sets the constructor function's 'this'
+    keyword to point to the new object.
+
+Qs8. What is Inheritance in OOP?
+Ans. Inheritance in OOP is defined as the ability of a class to derive properties and
+    characteristics from another class while having its own properties as well.
+
+Qs9. What is the “super” keyword in JS?
+Ans. The super keyword in JavaScript acts as a reference variable to the parent class.
+    It is mainly used when we want to access a variable, method, or constructor in the
+    base class from the derived class.
+
+Qs10. What will be the output for the following code:
+
+
+

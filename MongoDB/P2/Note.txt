@@ -1,0 +1,203 @@
+Mongoose:
+    >A library that creates a connection between MongoDB & Node.js javascript runtime environment.
+    >It is one ODM(Object Data Modeling) library.
+
+INSTALLATION:
+    npm install mongoose 
+
+Schema/Overll Structure/(column,constrints,datatype):
+
+    >Schema defines the shape of the documents within the collection.
+
+    const userSchema = new mongoose.schema({
+        name:String,
+        email:String,
+        age:Number
+    });
+
+MODEL:  
+    A model is a class with which we construct documents. 
+          |
+    const User = mongoose.model("User",userSchema); //user->collection
+
+Inssrting:
+    i.inserting one 
+        const User1 = new user({
+            name:"Sulaiman",
+            email:"sulaiman@gmil.com",
+            age:40});
+
+        const User2 = new user({
+            name:"Jakariya",
+            email:"jakariya@gmil.com",
+            age:56
+        });
+
+        User1.save() //to save in DB
+
+        User2.save()
+                .then((result)=>{console.log(result)})
+                .catch((err)=>{console.log(err)});
+    
+    ii.inserting multiple
+
+        User.insertMany([
+            {name:"Mohammad",email:"mohammad@gmail.com",age:33},
+            {name:"Arif",email:"arif@gmail.com",age:15},
+            {name:"Shabnam",email:"shabname@gmail.com"}
+        ]);
+        
+        Note:
+            Mongoose uses operation Buffering
+
+        Mongoose let's you start using your models immediately,without waiting for mongoose to establish
+        to establish a connection to MongoDB.
+
+    FIND:
+        model.find()//returns a query objects (thennable)
+
+    Mongoose Queries are not promises But they have a .then()
+
+        uesr.find().then((data)=>{
+            console.log(data);
+        });
+
+        user.find({age:{$gte:47}}).then(data=>{
+            consomle.log(data);
+        }).catch(err=>{
+            console.log(err);
+        })
+
+        *findOne    
+        model.findOne({age:{47}}).then(data=>{
+            console.log(data);
+        });
+
+        *Model.findById("juo894h48unf8n4").then(data=>{
+            console.log(data);
+        });
+
+    
+UPDATE 
+    i.model.updateOne()
+        user.updateOne({name:"altaf",{age:46}}).then(data=>{
+            console.log(res);
+        });
+
+    ii.Model.updateMany()
+        user.updateMany({age:{$gte:45}},{age:87}).then(res=>{
+            console.log(res);
+        })
+
+
+    using find show in after change
+
+    Model.findOneAndUpdate()
+
+        user.findOneAndUpdate({name:"altaf"},{age:20},{new:true}).then(res=>{
+            console.log(res);
+        })
+    Model.findByIdAndUpdate() 
+
+
+DELETTE :
+    i.deleteOne()
+        Model.deleteOne() //returns construct
+        user.deleteOne({name:"altaf"}).then(res=>{
+            console.log(res);
+        })
+
+    ii.deleteMany()
+        Model.deleteMany({age:{$gt:45}}).then(res=>{
+            console.log(res);
+        })
+
+    Other way to print after success
+
+    Model.findByIdAndDelete()
+    Model.findOneAndDelete()
+
+
+Schema validations:
+
+    Basically rules for schema 
+
+    const bookSchema = new mongoose.schema({
+        titel:{
+            type:String,
+            required:true,
+        },
+        author:{
+            type:String,
+        },
+        price:{
+            type:Number,
+        }
+    });
+
+    let Book = mongoose.model("Book",bookSchema);
+    let book1 = new book({
+        title:"Quaran",
+        author:"Allah"
+    });
+
+    book1.save().then(res=>{
+        console.log(res);
+    })
+
+
+    SCHEMA VALIDATIONS: 
+
+    SchemaType options
+
+    const bookSchema = mongoose.schema({
+        tittle:{
+            type:String,
+            required:true,
+        },
+        author:{
+            type:String,
+        },
+        price:{
+            type:Number,
+            min:[1,"Please enter valid price"] ,//min:1
+        },
+        discount:{
+            type:Number,
+            default:0,
+        },
+        genre:[String],
+        category:{
+            type:String,
+            enum:["fiction","non-fiction"],
+        },
+    });
+
+    let Bookx = mongoose.model({
+        name:"Eat That Frog",
+        author:"Brian Tracy",
+        price:520,
+        genre["self improvement"],
+        category:"non-fiction"
+    })
+
+    Bookx.save().then(res=>{
+        console.log(res);
+    }).catch(e=>{
+        console.log(e);
+    })
+
+With Update 
+    >This change the value of anything without following rules but if you pass then it's not.
+    {runValidators:true}
+
+    Book.findByIdAndUpdate("0621",{price:-199},{runValidators:true}).then(res=>{
+        console.log(res);
+    }).catch(err=>{
+        console.log(err);
+    })
+
+    Schema Validations:
+        Handling Errors
+
+        console.log(err.errors.category.properties.message);

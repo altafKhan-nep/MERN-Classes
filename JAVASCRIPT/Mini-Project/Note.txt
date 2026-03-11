@@ -1,0 +1,4 @@
+Event Bubbling:
+event.stopPropagation(); //prevent from Bubbling
+
+Event Delegation:

@@ -1,0 +1,127 @@
+Library v/s Framework:
+
+Library:
+    A library is a collection of pre-written code that can be used to perform 
+    specific task.
+    Eg:axios
+
+Framework:
+    A framework is a set of pre-written code that provides structure for developing
+    software applications.
+        Eg:express
+
+Express:
+    A Node.js web application framework that helps us to make web applications.
+    It is used for server side programming.
+        i.listen for incomming request(post,get,...)
+        ii.parse(data parse atg to js or Node.js)
+        iii.match information with routes
+        iv.response
+
+
+Getting Started With Express:
+eg:
+const express = require("express");
+const app = express();
+const port = 3000;
+
+app.listen(port,()=>{
+    console.log(`Listning from port no ${port}`);
+})
+listen ->listening response
+
+
+*Ports are the logical endpoint of a network connection that is used to exchange 
+    information between a web server and a client 
+
+
+Handling Request:/listening
+
+
+app.use((req,res)=>{
+    console.log("request recived!");
+})
+
+
+Sending A Response:
+
+
+res->may be palin text,array,object,html etc
+Eg:
+    res.send({
+        name:"apple",
+        color:"red"
+    })
+
+Overall:
+
+const app = express();
+const port = 8080;
+    //listen
+app.listen(port,()=>{
+    console.log(`Listning from port no ${port}`);
+})
+// Handling Request:
+//all type of request get same reply eg:/home,/search
+
+
+app.use((req,res)=>{
+    // console.log(req);
+    res.send({
+        name:"apple",
+        color:"red"
+    })
+    // Sending A Response:
+    res.send(code)
+})
+
+Routing:
+    It is the process of selecting a path for traffic in a framework in a network 
+    or between or across multiple networks.
+
+app.get("/",(req,res)=>{
+    res.send("You Contacted root page!");
+})
+app.get("/home",(req,res)=>{
+    res.send("You are in Home page of the web");
+})
+
+app.get("/search",(req,res)=>{
+    res.send("You are in search page!");
+})
+
+app.get("/contact",(req,res)=>{
+    res.send("You are in contact page!");
+})
+app.get("*",(req,res)=>{
+    res.send("page not found!")
+})
+
+*->wild card (when not match req)
+
+
+Nodemon:
+    To automatically restart a server with code changes.
+    install globally that better 
+
+PATH PARAMETERS:
+
+    req.params
+    Eg:
+app.get("/:username/:id",(req,res)=>{
+   let  {username,id} = req.params;
+   let htmlStr = `<h1>welcome to the page of @${username} and ${id}</h1> `
+    res.send(htmlStr);
+});
+
+
+Query Strings:
+    req.query 
+    Eg:
+app.get("/search",(req,res)=>{
+    let {q} = req.query;
+    if(!q){
+        res.send("You nothing searched!");
+    }
+    res.send(`<h1>you search for the query :${q}</h1>`);
+})

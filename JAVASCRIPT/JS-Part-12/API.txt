@@ -1,0 +1,124 @@
+API(Application Programming Interface);
+    URL-> normal API (no keys & free);
+
+Some Random APIs:
+    https://catfact.ninja/fact
+    https://www.boredapi.com/api/activity
+    https://dog.ceo/api/breeds/image/random
+
+JSON:
+    JavaScript Object Notation www.json.org
+    Eg:
+    {
+        "name":"Mohammad Altaf Khan",
+        "level":"Bachelor",
+        "marks":[60,58,55,59,57],
+        "roll":null
+    }
+    In XML form:
+    <?xml version="1.0" encoding="UTF-8" ?>
+        <root>
+         <name>Mohammad Altaf Khan</name>
+             <level>Bachelor</level>
+             <marks>60</marks>
+             <marks>58</marks>
+             <marks>55</marks>
+             <marks>59</marks>
+             <marks>57</marks>
+            <roll></roll>
+        </root>
+
+JSON:
+    JSON Is always in the form of string.
+    Accessing Data From JSON 
+
+    JSON.parse(data) Method ( JSON data --> js object)
+
+    JSON.stringify(json) Method ( js object --> JSON data)
+
+TESTING API REQUESTS:
+Tools
+    Hoppscoth
+    postman
+
+AJAX:
+    Asynchronous JavaScript and XML
+
+HTTP VERBS:
+    GET ->Only request
+    POST ->some data with request
+    DELETE->to delete
+
+STATUS CODE:
+    Examples:
+    200 - ok
+    404 - not found
+    400 - bad request 
+    500 - Internal server error
+
+ADD INFORMATION IN URLs:
+Query strings
+    https://www.google.com/search?q=harry+porter
+        q->key
+        harry->value
+    ?name=mohammad&marks=98
+    variable -->id,<id>,{{id}},2
+
+HTTP HEADERS:
+
+    header,value
+    Eg1:
+        GET https://icanhazdadjoke.com/
+        Accept , application/json
+
+
+OUR FIRST REQUEST:
+    using Fetch
+        fetch(url) -->it returns promises
+    Eg:
+
+let url = " https://catfact.ninja/fact";
+
+fetch(url)
+.then((res)=>{
+    return res.json();
+})
+.then((data1)=>{
+    console.log("Data1 :- ",data1.fact);
+    return fetch(url);
+
+})
+.then((res)=>{
+    return res.json();
+})
+.then((data2)=>{
+    console.log("Data2 :- ",data2.fact);
+})
+.catch((err)=>{
+    console.log("error ->",err);
+})
+
+
+USING FETCH WITH ASYNC/AWAIT:
+
+Axios:
+    Library to make HTTP requests.
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    >fetch gives not give exact json data ,we do parse to get it .
+    >it give exact response data.
+        axios.get(url) ;
+Axios:
+    Sending Headers
+    let url = "https://icanhazdadjoke.com/";
+
+async function getJoke(){
+    try{
+        const headers1JSON = {headers:{Accept:"application/json"}}
+        let res = await axios.get(url,headers1JSON);
+        console.log(res.data)
+
+    }catch(err){
+
+        console.log("error is ",err)
+    }
+}

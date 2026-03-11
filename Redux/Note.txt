@@ -1,0 +1,58 @@
+Redux:
+    State Management Library for JS Apps
+    Redux is built for larger,more complex applications.
+    Redux Toolkit is the official recomendation of writing Redux Code.
+
+    store (collection of state) -> (obj)
+    reducers ->(function) [state,action]
+
+Understanding Terms:
+    Store:A centralized store holds the whole state tree of your    application..
+
+    Reducers:Functions that take the current state and an action as arguments, and return a new state result.In other words (state,action)=> newState
+
+    Action: It is a plain javaScript object that has a field.(like events)
+
+    Slice: Collection of Redux reducer logic and actions for a single together in a single file.
+
+Setup Project:
+    npm create vite@latest
+    cd redux-class
+    npm install
+    https://redux-toolkit.js.org/introduction/getting-started
+
+    SP in redux:
+
+    Store
+    Actions
+    Reducer(s)
+
+Todo App:
+    Designing the Store.
+
+        todo -> id,task,isDone
+
+    Actions
+        Add a Todo, Mark as Done, Delete a Todo
+            {
+                type:"ADD_TODO",
+                payload:"write code"
+            }
+    
+Creating a reducer:
+    Redux Toolkit automatically genrate action creators(function that create action objects)
+
+    (state,action)=>{//update state}
+
+*Redux Toolkit lets you write simpler immutable update logic using 'mutating syntax'
+
+Provider Component:
+    The <Provider> component makes the Redux store available to any nested components that need to access the Redux Store.
+
+Dispatching Action:
+    Triggering a State change
+
+    The useDispatch hook allows you to send or dispatch an action to the redux store by giving the action as an argument to the dispatch varaible.
+
+    The useSelector hook allows you to extract data or the state from the Redux store using a selector function.(returns the data)
+

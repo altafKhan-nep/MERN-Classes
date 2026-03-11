@@ -1,0 +1,161 @@
+SELECTORS IN CSS:
+
+.Basic selectord of css:
+
+selectors{
+    property: value;
+}
+eg:
+h1{
+    color:green;
+}
+
+i.UNIVERSAL SELECTOR:
+To select everything in the document.
+
+    universal selector --> * {
+                          property:value;
+                        }
+
+ii.ELEMENT SELECTOR:
+Selects all element of the same type.              
+
+   element selector--> h1,h2 {
+                        property:value;
+                    }                     
+iii.ID SELECTOR:
+Selects an element based on the value of an element's id attributes.
+>generlly, one element have one unique id (same id not prefer but can)
+    
+        id selector --> #myid{
+                             property:value;
+                          } 
+
+iv.CLASS SELECTOR:
+Select an elment based on their class attributes.
+>we can give different elment same class.
+
+        class selector --> .myclass{
+                             property:value;
+                            } 
+
+*.DESCENDANT SELECTOR:
+>descendant ->parent
+
+EG. Selects all paragraph inside the divs or class or id .     
+                            
+descendant selector --> div p {
+                            property:value;
+                        }
+
+                        
+*.ADJACENT SIBLING COMBINATOR:
+Eg-Heading3 that comes imediately after any paragraph.
+>effect on that  just come after elment.
+
+sibling combinator --> p + h3 {
+                               property:value;
+                            }
+
+
+*.CHILD COMBINATOR:
+Eg.Selects all buttons which are direct children of spans.
+
+child combinator --> span > button {
+                                     property:value;
+                                }
+   
+                                
+v.ATTRIBUTE SELECTOR:     
+
+Select element based on the presence or value of a given attribute
+
+attribute selector --> input [att="value"]{
+                                         property:value;
+                                        }
+
+PSEUDO CLASS :
+A keyword added to a selector  that specifies a special state of the selected element(s).                   
+
+        :hover       -->when a mouse hover
+        :active      -->when a button is clicked
+        :checked     -->when a radio button is checked
+        :nth-of-type -->select nth term or element
+
+PSEUDO ELEMENT:
+A keyword added to a selector that lets you style a SPECIFIC PART of the selected element(s).
+
+        ::first-letter
+        ::first-line
+        ::selection --> when we select the sentences on a page
+
+
+CSS:CASCADING STYLESHEETS:
+
+    cascading --> this property always apply on same element and  always last apply.
+
+    What is cascade in css?
+    The css cascade algorithm's job is to select CSS declarations in order to determine the correct values for css properties.
+
+    Eg:
+
+    h2{
+        background-color:yellow;
+    }
+     h2{
+        background-color:green;
+    }
+    i.e final green color will be applied.
+
+    SELECTOR SPECIFICITY:
+
+    What is specificity?
+    specificity is a algorithm that calculates the weight that is applied given css declaration.
+    ___                 _________               ________
+    id   class,attributes & pseudo-class   element & pseudo element
+
+    Eg:
+         h2{
+            background-color:yellow;
+        }
+
+
+    _0__                 ____0_____               ____1____
+    id   class,attributes & pseudo-class   element & pseudo element 
+
+    .myclass:hover{
+            background-color:yellow;
+        }
+
+
+        _0__                 ____2_____               ____0____
+        id   class,attributes & pseudo-class   element & pseudo element 
+
+    What to remember?
+    1. id > class > element
+    2. more selector > less selector
+    3.if specificity is same -->cascading is applied
+
+    Inline specificity
+    inline styles are more specific than id. 
+
+
+     ____             ___                 _________               ________
+    inline style      id   class,attributes & pseudo-class   element & pseudo element
+
+
+!important:
+To show the most specific thing in document.
+    h2{
+             background-color:yellow !important;
+         }
+
+
+INHERITANCE IN CSS:
+>transform from upper generation to lower generation.
+>button,input not inherit a property by itself 
+    eg;
+        input{
+            background-color: inherit;
+        }
+>weidth,height,border etc are inherit.

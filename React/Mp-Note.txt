@@ -1,0 +1,23 @@
+Major Project:
+
+Material UI:
+    Library of React UI components
+
+Building a Whether Widget:
+    using React & Materail UI
+
+Structure:
+    form
+    1.  [search city name here]
+
+    2.      [search]
+
+    3.  [temperature]
+        [min]
+        [max]
+        [humidity]
+        [feels like]
+
+    App --> whetherApp --> search box & infoBox
+Using whether API:
+Building info Box:

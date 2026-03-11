@@ -1,0 +1,151 @@
+STRING METHOD:
+
+    Methods- actions that can performed on objects.
+
+Format:
+stringName.method()
+
+let msg = "   Hello  ";
+    str.trim():
+        Trims whitespaces from both end of the string & returns a new one.
+
+        output:"hello",but the value msg remains same.
+
+String are immutabe in JS:
+    No changes can made to strings.
+    whenever we do try to make a change ,a new string is created and old string is remain same.
+
+let str = "Altaf Khan";
+
+str.toUpperCase() //"ALTAF KHAN"
+str.toLowerCase()//"altaf khan"
+
+String Methods with Argument:
+Argument is the some value that we past to method..
+
+Format:
+    stringName.method()
+
+    indexOf():
+    Returns the first index of occurance of some value in string. Or give -1 if value not found
+        let str = " ilovecodding;
+
+        str.indexOf("love"); //1
+        str.indexOf("j"); //-1 not found
+        str.indexOf("o");//2 (only one index)
+
+Method Chaining:
+    use one method after other.order of excution is left to right.
+        str.toUpperCase().trim()
+
+Slice Method:
+    Returns a part of the orginal string as a new string.
+
+    let str = "ilovecodding";
+
+    str.slice(5) //"codding"
+    str.slice(1,5) //"love"
+    str.slice(-num) = str.slice(length - num)
+    eg:str.slice(-2) = str.slice(12 - 2) //=>10 index print
+
+replace() method:
+    Search a value in a strings and returns  a new string with a value replaced .
+    let str = "ilovecodding";
+
+    str.replace("love","do"); //" idocodding";
+    str.replace("o","x"); //" ilxvecodding";
+
+Array (Data Structure):
+    linear collection of things.
+
+    visulaizing an array:
+    let num = [2,4,6,8];
+               0 1 2 3
+    
+Array Are Mutable:
+
+let fruit = ["apple","mango","litchi"];
+
+fruit[0] = "banana";
+
+print fruit = ["banana","mango","litchi"];
+
+Array Method:
+
+    push :add to end //str.push("tesla")
+    pop:delete from end & returns it. //str.pop()
+    unshift:add to start  // str.unshift("deepal")
+    shift:delete from start & returns it.// str.shift()
+
+indexOf:returns index of something
+    let fruit = ["apple","mango","litchi"];
+
+    fruit.indexOf("mango"); //1
+    fruit.indexOf("Mango"); //-1
+    fruit.indexOf("banana"); //-1
+
+includes:search for a value
+    fruit.includes("litchi");//true
+    fruit.includes("orange");//false
+
+concat:merge 2 arrays:
+
+    let primary = ['a','b','c'];
+    let secondary = ['x','y','z'];
+
+    let res = primary.concat(secondary);
+
+reverse:reverse an array
+    it also reverse orginal array
+    primary.reverse()
+
+slice:copies a portion of any array
+    let color = ["red","green","yellow","purple","orange"];
+    color.slice() //['red', 'green', 'yellow', 'purple', 'orange']
+    color.slice(2) //['yellow', 'purple', 'orange']
+    color.slice(2,3) //['yellow']
+    color.slice(-2)//['purple', 'orange']
+
+Array Methods:
+
+splice:removes / replace / add elements in place 
+    splice (start , deleteCount ,item0...itemN)
+    let color = ["red","green","yellow","purple","orange"];
+
+        color.splice(3);//delete all from index 3
+        color.splice(0,1)//delete 1 item from index 0 
+        color.splice(5,1,"goGreen","wait") // delete one item from index 5 and add two item from index 5
+
+
+sort:sorts an array
+
+let days = ["tuesday","monday","wednesday","thursday","saturday"];
+days.sort()//it sort alphabetically accending order
+
+let squ=[25,16,4,49,36,9]; //it change number into string then sort not work properly from number
+
+Array References ->address in memory
+
+[1] == [1] ->false ->both has different address in memory
+[1] === [1] -> false
+    let num = ['a','b'] // num ->refference value
+
+    Eg:
+    let arr = ['a','b','c']; //if you change a value of arr it also change the value of arrCopy because both has same address
+    
+    let arrCopy = arr;
+    arr.push('d');
+    arr === arrCopy ->true
+    arr == arrCopy ->true
+
+Constant Array:
+In const array we can change the value but not a whole array with new value .
+const arr = [1,2,3,4]; 
+
+Nested Array:
+array of arrays.
+
+let nums = [ [1,2],[3,4],[5,6]];
+
+    nums[rows index ][colum index]
+    nums[0][1]-->2

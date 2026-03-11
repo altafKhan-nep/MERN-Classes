@@ -1,0 +1,127 @@
+Functions in JS:
+
+    Function defining(telling js)
+
+        function funcName(){
+         //do something
+        }
+
+    Function calling (using the function)
+         fumcName();
+
+Function with Arguments:
+    values we pass to the function.
+
+     function funcName(arg1,arg2...){
+         //do something
+        }
+
+Return :
+    return keyword is used to written the some value from the function.
+    
+    input ------> Function(does some work) ---->output
+
+    function funcName(arg1,arg2...){
+        //do something
+        return val;
+    }
+
+SCOPE:
+    Scope determines the accessibillity  of variables , objects and functions from different parts of the code.
+
+    Function scope:
+        Variables define inside a function are not accessible (visible)  from outside the function.
+
+    Block:
+        Variables define inside a  {} block can not be accessed  from outside the block.
+
+
+    Lexical: 
+        a variable defined outside the function can be accessible inside another function defined after varialble
+        declaration 
+
+        The opposite is NOT  true . 
+        We can access outer function varialble from inner function but not access from outer function 
+        to inner function 
+        inner function is block 
+
+       note: //HOISTING
+
+
+Function Expression:
+
+const variable = function(arg1,arg2..){
+    //do or return something
+}
+    variable();
+
+Higher Order Functions :
+
+    A function that does one or both:
+        .takes one or multiple functions as Arguments
+        .returns a function 
+Example:
+
+function multiGreet(func,n){//Higher Order Functions
+    for(let i=0;i<n;i++){
+        func();
+    }
+}
+
+const greet = function(){
+    console.log("Marhaba!")
+}
+
+multiGreet(greet,4);    
+
+Returns a function:
+function oddEvenTest(request){
+    if(request == "odd"){
+        return function odd(n){
+           console.log(n%2 !=0);
+        }
+    }else if (request == "even"){
+        return function even(){
+            console.log(n%2 ==0);
+        }
+    }else{
+        console.log("Wrong number!");
+    }
+}
+
+Methods:
+    Actions that can be performed on an object.
+
+const calculator = {
+    add:function(a,b){
+        return a+b;
+    },
+    sub:function(a,b){
+        return a - b;
+    },
+    mul:function(a,b){
+        return a * b;
+    },
+    div:function(a,b){
+        return a / b;
+    },
+}
+console.log("Add:",calculator.add(2,2));
+
+Note: Internally array & string are object so, we can use Methods inside this.
+
+Methods shorthand:
+const calculator = {
+    add(a,b){
+        return a+b;
+    },
+    sub(a,b){
+        return a - b;
+    },
+    mul(a,b){
+        return a * b;
+    },
+    div(a,b){
+        return a / b;
+    },
+}

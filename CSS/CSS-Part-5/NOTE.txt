@@ -1,0 +1,124 @@
+What is Flexbox?(1D)
+->responsive(changing atg to screen)
+->Flexible box layout.
+->It is a one-dimensional layout method for arranging items in a row or columns.
+
+way:
+            direction = rows 
+    --------|-------------------->(main axis)
+            |
+            v (cross axis)
+
+          
+            direction = column
+    --------|-------------------->(cross axis)
+            |
+            v (main axis)
+
+genreal example:
+
+    <div> //flex comtainer (display:flex;)
+        <div> 1</div> //flex item
+        <div> 2</div> //flex item
+        <div> 3</div> //flex item
+     </div>
+
+FLEXBOX DIRECTION:
+It sets how flex item are placed in the flex container,along which axis and direction.
+
+.flex-direction:row; main axis , left to right
+.flex-direction:row-reverse;  main axis right to left
+.flex-direction:column; cross axis, top to botom 
+.flex-direction:column-reverse; cross axis , botom to top
+
+JUSTIFY CONTENT:
+Tell how the browser distributes space between and around the content items along the main axis.
+
+justify-content: flex-start; // The element goes to start of the main axis 
+
+justify-content: flex-end;//The element goes to end of the main axis 
+
+justify-content: centre;//The element goes to centre of the main axis 
+
+justify-content:space-between; //Extra space of main axis goes between element ,if not then not
+
+justify-content:space-around; //Extra space of main axis goes to between elment and half space betn 
+                                element around the start element and end element
+
+justify-content:space-evenly; //Extra space of main axis goes equally around and betn element.
+
+
+
+FLEX WRAP:
+Sets whether flex items are forced onto one line or can wrap onto multiple lines.
+
+.flex-wrap:nowrap; //by default
+
+.flex-wrap:wrap; // wrap in the reference of main axis
+
+.flex-wrap:wrap-reverse; // wrap in the reference of cross axis
+
+
+ALIGN ITEMS:
+->Group property.
+
+Distributes our items along the cross axis.
+
+    align-items: flex-start; //items shift to to start of cross axis
+    align-items:flex-end; //items shift to to end of cross axis
+    align-items:centre;//items shift to to centre of cross axis
+    align-items:baseline; //every element content start from same height
+
+ALIGN CONTENT:
+It sets the distribution of space between and around content items along a Flexbox's cross-axis.
+
+.align-content:flex-start / flex-end / centre
+
+.align-content:space-between / space-around / evenly 
+
+.align-content:baseline;
+
+
+ALIGN SELF:
+(align-self>align-item)
+.>Individual item property.
+Align an item cross the axis.
+
+align-self:flex-start;
+align-self:flex-end;
+align-self:centre;
+align-self:baseline;
+
+
+FLEX SIZING:
+
+.flex-basis:
+It sets the initial main size of a flex item.
+        flex-box:100px;
+
+
+.flex-grow:
+It specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
+
+        flex-grow:1;(default) //2 mean increased size of the system
+                max-width:100px;//width is set it can't change is fixed
+                min-width:100px;
+
+.flex-shrink:
+>use when element overflow.
+It sets the flex shrink factor of the shrink item.
+
+        flex-shrink:1;(default) //3 mean decreased size of the system
+
+FLEX SHORTHAND:
+
+.flex-grow | flex-shrink | flex-basis
+        flex:2 2 100px;
+
+.flex-grow | flex-basis
+        flex:2 100px;
+
+.flex-grow(unitless)
+        flex:2;
+.flex-basis
+        flex:100px;

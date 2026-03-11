@@ -1,0 +1,19 @@
+GET & POST Requests:
+    GET:
+    >used to GET some response 
+    >Data sent in query strings(limited,string data & visible in URL)
+
+    POST:
+    >Used to POST something (for Create / Write / Update )
+    >Data send via request body (any type of data)
+
+Handling Post Requests:
+    >Set up POST request route to get some response
+
+    >Parse POST request data
+        
+        app.use(express.urlencoded({extended :true}));
+        app.use(express().json());
+
+Revisting Js:
+

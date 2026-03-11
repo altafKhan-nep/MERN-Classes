@@ -1,0 +1,103 @@
+*{
+    font-family: Helvetica;
+}
+
+h1{
+    color:#f52936;
+}
+
+#login{
+    background-color: white;
+}
+
+#signup{
+    background-color: #f52936;
+    color: white;
+}
+
+.upvote{
+    background-color: green;
+    color: aliceblue;
+}
+
+/* descendant selector */
+/* p a {
+    background-color: bisque;
+    color:#f52936
+} */
+
+.post a {
+
+    background-color: bisque;
+    color:#f56d29
+}
+
+nav ul li a {
+    color: pink;
+}
+
+/* sibling combinator */
+p + h3 {
+    text-decoration: underline;
+}
+
+.upvote + button{
+    background-color: aquamarine;
+    color: black;
+}
+
+/* child combinator: */
+
+div > input{
+    background-color: wheat;
+}
+
+/* Attributes Selector: */
+
+input[type="text"]{
+    color:green;
+}
+
+input[type="password"]{
+    color:red;
+}
+input[type]{
+    background-color: ghostwhite;
+}
+
+/* Pseudo class */
+
+button:hover{
+    background-color: white;
+    color:green;
+}
+
+h3:hover{
+    text-decoration: line-through;
+}
+
+p:active{
+    font-weight: bold;
+    color:rgb(221, 11, 11);
+}
+
+input[type="radio"]:checked  + label{
+    color: red;
+    
+} 
+
+div:nth-of-type(1n){
+    background-color: aqua;
+}
+
+h1::first-letter{
+    color: darkslategrey;
+}
+
+p::first-line{
+    color: slategrey;
+}
+
+p::selection{
+    color:lightgreen !important;
+}

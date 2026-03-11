@@ -1,0 +1,112 @@
+What i git?
+Free & Open source Version Control System.
+>tools that helps to track Control changes in code
+    i.track history
+    ii.help to colbrate
+
+What is Github?
+    Website where we host repositories online.
+
+Let's Create Our Github Account:
+    .create new account or login 
+    .create new repository :delta-demo
+
+Using Git:
+    Command line (most popular)
+    IDE / Code Editor(like vs code)
+    Graphical User Interface(like Gitkraken)
+
+Configuration Git:
+    git config --global user.name  "My Name"
+    git config --global user.email "my email"
+
+    To list your data:
+        git config --list
+
+Basic Commands:
+
+    i.clone :- Cloning a repository on our local machine.
+        %git clone <-- some link -->
+
+    ii.status:-display the state of code 
+        %git status
+
+    File Status Lifecycle:image
+
+    iii.add:- adds new or changed files in working directory to the Git staging area.
+        %git add <-- file name -->
+
+    iv.commit:- it is the record of the change.
+        %git commit -m "some message"
+
+    #Note:% git commit -am "you can do both add and commit once you use this"
+
+    v.push:- upload local repo content to remote repo
+        %git push origin main
+
+    vi.git init:-used to create a new git repo  
+        %git init
+    
+        %git remote add origin <-link->
+        %git remote -v (to verify remote)
+        %git branch (to check branch)
+        %git branch -M main (to rename branch) 
+        %git push origin main
+
+    note: % git push -u origin main ->it set the fixed repo main
+            %git push
+
+BRANCH COMMANDS:
+    i.  %git branch (to check branch)
+    ii. %git branch -M name ( to rename the branch name)
+    iii.%git checkout <-branch name -> (to navigate) // %git switch <-branch name->
+    iv. %git checkout -b <- new branch name -> (to create new branch)
+    v.  %git branch -d <- branch name -> (to delete branch) 
+
+
+MERGING CODE:
+    %git diff <-branch name -> (to compare commits,branches,files & more)
+    %git merge <-branch name-> (2 merge 2 branches)
+            OR
+        Create pr(Pull Request)
+Pull Request:
+    It let's tell you others about changes you've pushed to a branch in a 
+        repository on a GitHub
+
+%git pull origin main
+    used to fetch and download content from a remote repo and immediately 
+    update the local repo to match that content
+
+MERGE CONFLICTS:
+    An event that takes place Git is unable to automatically resolve 
+    differences in code between to commits
+    Eg:
+
+    >in same file we add differen features
+    <<<<<<< HEAD
+    // Adding New Features - button
+    =======
+    // Adding New Features - form
+    >>>>>>> feature
+
+FIXING MISTAKE:
+
+case1: staged changes
+    %git reset <-file naeme->
+    %git reset
+
+case2: commited changes (for one commit )
+    %git reset <- commit hash ->
+    %git reset HEAD~1 //it back to just last commit
+
+case3:commited changes(for many commitd)
+    %git reset <-commit hash ->
+    %git reset --hard <-commit hash -> //it erase the data after the commit hash
+
+    note:for hash data %git log
+
+What Is Forking?
+    A fork is a new repository that shares code and visibility setting with original 
+    "upstream"
+
+    Fork is a rough copy.

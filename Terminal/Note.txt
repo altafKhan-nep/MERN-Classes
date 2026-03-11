@@ -1,0 +1,2 @@
+/ ->root dir (all user data)
+~ ->home dir(user home)

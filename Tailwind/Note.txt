@@ -1,0 +1,58 @@
+Tailwind CSS:
+    What is Tailwind?
+    "Rapidly build modern websites without ever leaving your HTML".
+
+    "utility-first" means the framework's main focus is on providing utility classes.
+        -> it reduce the confusion 
+        -> it reduce significantly the bundle size
+
+Using Tailwind CLI:
+    1. npm install tailwindcss @tailwindcss/postcss postcss
+    2.npm i vite (for automatically updated)
+    3.npx tailwindcss init -p
+    4.tailwind.config.js ->content:["*"]
+    5.style.css (directives @tailwind base;,@tailwind components;@tailwind utilities;
+    )
+    6.package.json --> "start":"vite"
+    7.link css with html
+
+Typography and Styling:
+
+
+Color:
+    text-yellow-950
+    bg-purple-700
+
+Spacing:
+    i.marging:(m-<number>,-m-<number>)
+         ml-,mr-,mx-,my,m-
+
+    ii.padding:(p-<number>)
+        pl-,pl-,mr-,mx-,my-,m-
+
+    iii.space between:(space-x-0)
+
+Border:
+    border-radius: rounded-xs(size) 
+    border-width: border-<number>
+    border-color:border-red-100
+    bordr-style: border-solid
+
+Breakpoints:
+
+    Breakpoint prefix	Minimum width	CSS
+    sm	40rem           (640px)	        @media (width >= 40rem) { ... }
+    md	48rem           (768px)	        @media (width >= 48rem) { ... }
+    lg	64rem           (1024px)	    @media (width >= 64rem) { ... }
+    xl	80rem           (1280px)	    @media (width >= 80rem) { ... }
+    2xl	96rem           (1536px)	    @media (width >= 96rem) { ... }
+
+Apply Directive:
+    Use @apply to inline any existing utility classes into your own custom css.
+
+       .box {
+        @apply bg-purple-700 text-white m-4 rounded-full border-3;
+        }
+
+Activity:
+    Design this card using Tailwind.

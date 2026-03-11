@@ -1,0 +1,148 @@
+CALL STACK:
+
+It is a data structure that track which function call is running sequencly ,the function which call first
+that store button of the stack the function that call after that add top of the before added stack.
+>stack :last in first out (LIFO)
+
+Visualizing the call stack:
+function one(){
+    return 1;
+}
+function two(){
+    return one() + one();
+}
+
+function three(){
+    let ans = two() + one();
+    console.log(ans);
+}
+
+
+JS IS SINGLE THREADED:
+    JavaScript is synchronous, but it can handle asynchronous tasks through methods 
+    like `async/await`, which is important when discussing asynchronous vs synchronous programming 
+    in JavaScript
+
+line by line :synchrous nature.
+     let a = 10;
+    console.log(a);
+    let b=20;
+    console.log(b);
+    console.log(a+b);
+
+// asynchrous nature (this is not a js property but with help of browser)
+    the browser take this to self and waiting for time over then give to js stack to return immediately
+
+setTimeout(()=>{
+    console.log("It's Me Mohammad Altaf Khan");
+},2000)
+
+console.log("Hello....");
+
+//calbacks nesting ->callback hell
+
+//to save from callback hell promises are come
+
+Callback Hell:
+
+When multiple asynchronous operations are nested, it leads to callback 
+hell, where the code becomes hard to read and maintain.
+
+PROMISES:(object)
+
+    The promises object represents the eventual completion (or failure) of an 
+    asynchronous opration and it's resulting value.
+    resolve(sucess) & reject(failed)
+    Promises
+    >Promises are a way to handle asynchronous operations more cleanly. 
+         A Promise represents a value that may be available now, in the future, or never.
+
+        States of a Promise:
+
+            Pending: Initial state, neither fulfilled nor rejected.
+
+            Fulfilled: The operation completed successfully.
+
+            Rejected: The operation failed.
+
+
+    Examples:
+
+    function saveToDb(data){
+    return new Promise((resolve,reject) => {
+        let internet = Math.floor(Math.random()*10) + 1;
+         if(internet >4){
+            resolve("Data saved successfully!");
+         }else{
+            reject("Weak connection :data failed to save!");
+         }
+    });
+
+}
+
+Promise - Method:
+
+catch()->catch is catches the rejected error of promises.
+then()->what work should be done after the fulfilled.
+
+    Example :above include
+    saveToDb()
+    .then(()=>{
+    console.log("Promises was resolved!");
+    })
+   .catch(()=>{
+    console.log("Promises was rejected!");
+    
+})
+
+//Improved promises (promise chaining)
+saveToDb("apna college")
+.then(()=>{
+    console.log("Data 1 successful saved!");
+    return saveToDb("Altaf Khan");
+})
+.then(()=>{
+    console.log("Data 2 successful saved!");
+    return saveToDb("mohammad");
+})
+.then(()=>{
+    console.log("Data 3 successful saved!");
+})
+.catch(()=>{
+    console.log("Promises was rejected!");
+})
+
+
+
+Promises:
+    Promise are rejected or resolved with some data (valid results or errors).
+
+
+    Ex:with above
+    
+        saveToDb("apna college")
+.then((result)=>{
+    console.log("Data 1 successful saved!");
+    console.log("Result of promises",result)
+    return saveToDb("Altaf Khan");
+})
+.then((result)=>{
+    console.log("Data 2 successful saved!");
+    console.log("Result of promises",result)
+    return saveToDb("mohammad");
+})
+.then((result)=>{
+    console.log("Data 3 successful saved!");
+    console.log("Result of promises",result)
+})
+.catch((error)=>{
+    console.log("Promises was rejected!");
+    console.log("Error of promises",error)
+})
+
+Promises:let's apply promises to our call back hell;
+
+async function	:- Declares a function that returns a Promise automatically
+await keyword	:- Pauses the function until the Promise resolves/rejects
+try...catch	:-Catches any errors just like .catch()
+

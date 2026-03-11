@@ -1,0 +1,208 @@
+1. forEach
+    Definition: 
+        The forEach() method executes a provided function once for each array element.
+
+    Example:
+
+        let arr = [1, 2, 3, 4];
+        arr.forEach((el) => {
+        console.log(el); // Prints each element one by one
+        });
+        
+    Key Points:
+        forEach does not return a new array.
+
+        It's generally used for side effects (e.g., logging, updating values, etc.).
+
+        Cannot be used to break or return early from the loop (use for or for...of for that).
+
+2. map
+    Definition: 
+        The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+Example:
+
+        let arr = [1, 2, 3, 4];
+        let newArr = arr.map((el) => el * 2);
+        console.log(newArr); // [2, 4, 6, 8]
+        Key Points:
+           map() always returns a new array.
+
+    The original array remains unchanged.
+
+    It's useful when you need to transform or modify the elements of the array.
+
+3. filter
+        Definition: 
+            The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+Example:
+
+        let arr = [1, 2, 3, 4, 5];
+        let evenNumbers = arr.filter((el) => el % 2 === 0);
+        console.log(evenNumbers); // [2, 4]
+
+Key Points:
+    filter() returns a new array containing only the elements for which the function returns true.
+
+    If no elements pass the test, an empty array is returned.
+
+4. some
+    Definition: 
+        The some() method checks if at least one element in the array passes the test implemented by the provided function. It returns true if any element passes the test; otherwise, it returns false.
+
+Example:
+
+    let arr = [1, 2, 3, 4];
+    console.log(arr.some((el) => el % 2 === 0)); // true (because 2 and 4 are even)
+    console.log(arr.some((el) => el > 5)); // false
+    
+Key Points:
+    some() is used for a logical check.
+
+    Returns true if any element satisfies the condition; otherwise, false.
+
+5. every
+Definition: 
+        The every() method checks if all elements in the array pass the test implemented by the provided function. It returns true if every element satisfies the condition, otherwise false.
+
+Example:
+
+    let arr = [2, 4, 6, 8];
+    console.log(arr.every((el) => el % 2 === 0)); // true
+    console.log(arr.every((el) => el > 5)); // false
+
+Key Points:
+    every() checks if all elements meet the condition.
+
+    Returns true if every element satisfies the condition; otherwise, false.
+
+6. reduce
+    Definition:
+        The reduce() method executes a reducer function (that you provide) on each element of the array (from left to right) to reduce it to a single value.
+
+Example:
+
+        let arr = [1, 2, 3, 4];
+        let sum = arr.reduce((acc, el) => acc + el, 0);
+        console.log(sum); // 10 (accumulator starts at 0)
+Advanced Example (Max Value):
+
+        let arr = [1, 5, 3, 9];
+        let max = arr.reduce((maxValue, el) => (el > maxValue ? el : maxValue), -Infinity);
+        console.log(max); // 9
+Key Points:
+        The reduce() method takes two parameters: the callback function and the initial accumulator value.
+
+        It's great for calculating sums, averages, or finding max/min values in an array.
+
+7. Default Parameters
+    Definition: 
+        In JavaScript, you can assign default values to function parameters.
+
+Example:
+
+        function greet(name = "Guest") {
+        console.log(`Hello, ${name}`);
+        }
+
+        greet(); // Hello, Guest
+        greet("Alice"); // Hello, Alice
+Key Points:
+        Default parameters ensure that your function works even if the caller doesn't provide a value.
+
+        Default values only take effect if the argument is undefined.
+
+8. Spread Operator (...)
+    Definition: 
+        The spread operator is used to unpack elements from arrays or properties from objects.
+
+Array Example:
+
+        let arr = [1, 2, 3];
+        let newArr = [...arr, 4, 5]; 
+        console.log(newArr); // [1, 2, 3, 4, 5]
+Object Example:
+        let data = { name: "John", age: 30 };
+        let newData = { ...data, city: "New York" };
+        console.log(newData); // { name: "John", age: 30, city: "New York" }
+Key Points:
+        The spread operator can copy elements of an array or properties of an object.
+
+        It makes merging or copying data easy and concise.
+
+9. Rest Operator (...)
+    Definition:
+        The rest operator allows a function to accept an indefinite number of arguments as an array.
+
+Example:
+
+        function sum(...args) {
+        return args.reduce((acc, el) => acc + el, 0);
+        }
+        console.log(sum(1, 2, 3, 4)); // 10
+Key Points:
+        ... collects remaining arguments into an array.
+
+        It’s commonly used in functions that need to handle variable numbers of arguments.
+
+10. Destructuring Arrays
+    Definition: 
+        Destructuring allows you to unpack values from arrays (or objects) into distinct variables.
+
+Example:
+
+        let names = ["Thor", "Iron Man", "Captain America"];
+        let [first, second, third] = names;
+        console.log(first); // Thor
+        console.log(second); // Iron Man
+Rest in Arrays:
+
+        let [winner, runnerUp, ...otherNames] = names;
+        console.log(otherNames); // ["Captain America"]
+
+Key Points:
+        Destructuring is a great way to extract values from arrays (or objects) quickly.
+
+        The ... syntax collects the remaining values into a new array.
+
+11. Destructuring Objects
+    Definition:
+         Destructuring can also be used to extract values from objects into variables.
+
+Example:
+
+        const student = {
+        name: "Alice",
+        age: 21,
+        city: "Wonderland",
+        };
+
+        let { name, age, city } = student;
+        console.log(name); // Alice
+        console.log(age); // 21
+Default Values in Destructuring:
+
+        let { name, city = "Unknown" } = student;
+        console.log(city); // Wonderland (since it exists in the object)
+Key Points:
+        Destructuring allows you to extract multiple properties from an object concisely.
+
+        You can assign default values for properties that may not exist.
+
+Summary and Final Points
+        forEach: Use for looping over arrays when you need side effects (like logging).
+
+        map: Useful for transforming arrays into a new array.
+
+        filter: Useful for filtering out items that don’t meet a condition.
+
+        some: Checks if any element meets the condition.
+
+        every: Checks if all elements meet the condition.
+
+        reduce: Reduces an array into a single value (e.g., sum, max, etc.).
+
+        Spread and Rest: The spread operator ... is used to unpack, while the rest operator ... is used to collect values.
+
+        Destructuring: Efficiently extract data from arrays and objects into variables.

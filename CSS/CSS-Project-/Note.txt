@@ -1,0 +1,13 @@
+OVERFLOW:
+The overflow CSS shorthand property sets the desired behavior when content does not fit 
+in the element's padding box (overflows) in the horizontal and/or vertical direction.
+ body {
+    overflow:visible/hidden/clip/scroll/auto;
+ }
+
+ APPEARANCE:
+ The appearance CSS property is used to display UI elements with platform-specific styling, based on the operating system's theme.
+   appearance:none/auto;
+slider/thumb:https://www.quirksmode.org/blog/archives/2015/11/styling_and_scr.html
+
+

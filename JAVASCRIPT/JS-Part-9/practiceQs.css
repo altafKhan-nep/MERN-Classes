@@ -1,0 +1,10 @@
+.red {
+    color:red;
+}
+.blue{
+    color:blue;
+}
+.divDeco {
+    border: 2px solid black;
+    background-color: pink;
+}

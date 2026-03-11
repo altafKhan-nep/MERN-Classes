@@ -1,0 +1,143 @@
+Javascript:
+Using the console:
+    Uses REPL
+    Read-Evaluate-Print-Loop
+
+What is variable?
+A variable is simply the name of a storage location.
+
+Data Type in JS:
+    Primitive Type
+        i.Number
+        ii.Boolean
+        iii.String
+        iv.Undefined
+        v.Null
+        vi.Bigint
+        vii.Symbol
+
+    i.Numbers in JS:
+    Positive(10) & negative(-7)
+    Integers(56,-100)
+    Floating Numbers - with decimal (4.6,-8.9)
+
+    .Modulo(remainder operator)
+        12%5 = 2
+    .Exponentiation(power operator)
+        2**3 = 8
+
+NaN IN JS:
+    The NaN global property is value representing is Not-A-Number.
+        0/0 , NaN - 1 ,NaN *2 , NaN + NaN ,NaN/NaN
+
+Operator Precedence:
+    This a general order of solving an expression.
+        left->right
+        ()
+        **
+        * , / , % 
+        = , - 
+
+Let Keyword:
+    Syntax of Declaring a variables.
+    EG:  
+        let num = 3;
+            num = num +1;
+        let cgpa; cgpa = 8.9;
+
+Const Keyword:
+    Values of constants can't be changed with re-assignment & they can't be decalared.
+    const pi =3.14; -> pi = pi +1; //error
+    const g  = 9.8;
+
+Var Keyword:
+    Old Syntax of variables.
+    Eg:
+        var age =20;
+        var cgpa = 8.9;
+
+        var num1 =2;
+        var num2 = 4;
+        var sum = num1 + num2;
+
+Assignment Operator:
+eg:
+    age = age + 1;
+    age +=1;
+
+    age = age-1;
+    age -= 1;
+
+    age = age * 1;
+    age *=1;
+
+    age = age /1;
+    age /=1;
+
+    age = age % 1;
+    age %=1;
+
+Unary Operator:
+
+    age = age + 1;
+    age +=1;
+    age ++;//increment by 1
+
+     age = age  1;
+    age -=1;
+    age --;//decrement by 1
+
+    pre-increment(change,then use)
+        let age =20;
+        let newAge = ++age;
+
+    post-increment(use,then change)
+        let age =20;
+        let newAge = age++;
+
+ii.BOOLEAN IN JS:
+    Boolean represents a truth value->true or false/yes or no
+
+    let age = 23;
+    let isAdult =true;
+
+    let age = 13;
+    let isAdult = false;
+
+iii.String in JS:
+    Strings are text or sequence of character.
+    Eg:
+        let name = "altaf khan";
+        ler roll = "developer";
+        let char = 'a';
+        let num = "123";
+        let empty =" ";
+
+String Indicies:
+
+    let name = " ALTAF KHAN";
+
+            A   L   T   A   F   --  K   H   A   N
+    Index:  0   1   2   3   4   5   6    7   8   9 
+    name[0] ->A
+    name[1] ->L
+
+CONCATINATION:
+    adding strings together.
+
+    "Mohammad" + " " + "Altaf" + "Khan" = "Mohammad Altaf Khan"
+
+    "khan" + "1" =khan1
+
+iv.Undefined:
+    A variable that has not been assigned a value is of type Undefined.
+        >let a;
+        >a
+        <.undefined
+
+v.null:
+    The null value represents the intentional absence of any object value .
+    To be explicity assigned.
+        >let a = null;
+        >a
+        <.null

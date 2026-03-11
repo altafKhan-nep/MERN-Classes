@@ -1,0 +1,73 @@
+Templating:
+    EJS(Embedded Javascript templates)
+    EJS is a simple templating language that lets you generate HTML markup with plain Javascript.
+
+Using EJS:
+
+    app.set("view engine","ejs"); //templete engine that set ejs
+
+        app.get("/",(req,res)=>{
+        res.render("home.ejs");
+    })
+
+
+    Note:views file is search where you start your server 
+        if you want to start from any where server without error then 
+
+Views Directory:
+
+    const path = require("path");
+    
+    app.set("views", path.join(__dirname, "views"));
+    or,
+    app.set("views", path.join(__dirname, "/views"));
+Note:   
+    __dirname ->is address or current dir  of server i.e  index.js
+
+Interpolation Syntax:
+    Interpolation refers to embedding exoressions into marked up case.
+        just like object literals 
+    Syntax or Tag:  
+        <%= Outputs the value into the template (HTML escaped)
+
+https://ejs.co/#docs 
+
+ACTIVITY:
+
+Instagram EJS:
+    create a basice template for instagram page based on following routes
+        /ig/:username
+
+
+Conditional Statement In EJS:
+    Adding condition inside ejs
+
+    use this tag :<% 'Scriptlet' tag, for control-flow, no output
+    Syntax:
+        <% if(diceVal ==6) { %>
+                <h2>Nice! roll dice again.</h2>
+
+        <% }%>
+
+LOOPS IN EJS:
+
+   <ul>
+        <% for(name of followers) {%>
+
+        <li><%= name %></li>
+
+        <% }%>
+    </ul>
+
+SERVING STATIC FILES:
+    it helps privide all the file to the present of server file
+
+    app.use(express.static(path.join(__dirname,"public")));
+
+    public->path of style or a script eg.public/css
+    middleware->express.static()
+    
+
+INCLUDES:- sub template
+    Syntax:<%- includes("includes/head.ejs")%>
+      <%_ ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it

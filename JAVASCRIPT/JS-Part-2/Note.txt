@@ -1,0 +1,114 @@
+Console.log() :
+To write (log) a message on the Console
+
+    console.log("Apna college");
+    console.log(1234);
+    console.log(12 + 12);
+    console.log("Apna","college",123,12  -2);
+
+LINK JS FILE:
+<script src="app.js" > </script>
+
+TEMPLATE LITERALS:
+They are used to add embedded expression in a string.
+    let a = 5;
+    let b = 10;
+
+    console.log(`your pay ${a+b} rupees.`);
+    //console.log("your pay ",(a+b),"rupees");
+
+OPERATORS IN JS.
+
+Airthmatic Operator(+,-,*,/,**,%)
+Unary Operator(++,--)
+Assignment Operator(=,+=,-=,*=,/=,%=,**=)
+
+Comparison Operator:
+    Comparison operators compare 2 values
+   ( >,>=,<,<=,==,!=)
+    
+    == (compares value, not type)
+    eg;true for below:
+        "123" == 123 ,1 =='1' ,0 == ' ', 0==false, null == undefined
+    ===(compar type and value)
+    
+    false for below:
+     "123" === 123 ,1 === '1' ,0 === ' ', 0 === false, null === undefined
+
+     Comparison for Non Numbers
+     'a' > 'A'  //true
+     '*' < '&' //false
+
+Logical Operator:
+
+
+CONDITIONAL STATEMENTS:
+
+.if statement:
+    //some code before if 
+    if(some condition){
+        //do something
+    } 
+    //some code after if 
+
+.else-if statement:
+    if(condition1){
+        //do something 
+    }
+    else if(condition2){
+          //do something else
+    }
+    else if(condition3){
+          //do something else
+    }
+.else statement:
+    if(condition1){
+        //do something 
+     }
+    else {
+          //do something else
+     }
+
+.Nested if-else:
+    Nesting is writing if-else statement inside if-else statements.It can have many levels.
+    Eg:
+        if marks >= 33
+            if marks >= 80 
+                print 'o'
+            else 
+                print 'A'
+        else
+         print "Better luck next time!"
+.switch:
+    Used when we have some fixed values that we need to compare to.
+
+
+Logical Operator:
+Logical operators to combine expression.
+    &&(Logical And)  (exp1) &&(exp2)
+    ||(Logical OR)  (exp1) || (exp2)
+    !(Logical Not) !(exp)
+
+
+truthy & falsy: 
+    Everything in js is true or false.(in boolean context).
+    This doesn't mean their value is itself true or false,but they are treated as true or false
+    if taken in a boolean context.
+
+    falsy value:
+    false,0,-0,on(BigInt value),""(empty string),null,undefined,NaN
+
+    truthy value:
+    Everything else
+Note:
+    console.log("");
+    console.error("");
+    console.warn("");
+
+ALERT & PROMPT:
+
+Alert displays an alert message on the page.
+    alert("Something is wrong);
+
+Prompt displays a dialog box that asks user for some input.
+    prompt("Please enter your roll number");

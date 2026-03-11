@@ -1,0 +1,649 @@
+            Part 1
+Javascript:
+Using the console:
+    Uses REPL
+    Read-Evaluate-Print-Loop
+
+What is variable?
+A variable is simply the name of a storage location.
+
+Data Type in JS:
+    Primitive Type
+        i.Number
+        ii.Boolean
+        iii.String
+        iv.Undefined
+        v.Null
+        vi.Bigint
+        vii.Symbol
+
+    i.Numbers in JS:
+    Positive(10) & negative(-7)
+    Integers(56,-100)
+    Floating Numbers - with decimal (4.6,-8.9)
+
+    .Modulo(remainder operator)
+        12%5 = 2
+    .Exponentiation(power operator)
+        2**3 = 8
+
+NaN IN JS:
+    The NaN global property is value representing is Not-A-Number.
+        0/0 , NaN - 1 ,NaN *2 , NaN + NaN ,NaN/NaN
+
+Operator Precedence:
+    This a general order of solving an expression.
+        left->right
+        ()
+        **
+        * , / , % 
+        = , - 
+
+Let Keyword:
+    Syntax of Declaring a variables.
+    EG:  
+        let num = 3;
+            num = num +1;
+        let cgpa; cgpa = 8.9;
+
+Const Keyword:
+    Values of constants can't be changed with re-assignment & they can't be decalared.
+    const pi =3.14; -> pi = pi +1; //error
+    const g  = 9.8;
+
+Var Keyword:
+    Old Syntax of variables.
+    Eg:
+        var age =20;
+        var cgpa = 8.9;
+
+        var num1 =2;
+        var num2 = 4;
+        var sum = num1 + num2;
+
+Assignment Operator:
+eg:
+    age = age + 1;
+    age +=1;
+
+    age = age-1;
+    age -= 1;
+
+    age = age * 1;
+    age *=1;
+
+    age = age /1;
+    age /=1;
+
+    age = age % 1;
+    age %=1;
+
+Unary Operator:
+
+    age = age + 1;
+    age +=1;
+    age ++;//increment by 1
+
+     age = age  1;
+    age -=1;
+    age --;//decrement by 1
+
+    pre-increment(change,then use)
+        let age =20;
+        let newAge = ++age;
+
+    post-increment(use,then change)
+        let age =20;
+        let newAge = age++;
+
+ii.BOOLEAN IN JS:
+    Boolean represents a truth value->true or false/yes or no
+
+    let age = 23;
+    let isAdult =true;
+
+    let age = 13;
+    let isAdult = false;
+
+iii.String in JS:
+    Strings are text or sequence of character.
+    Eg:
+        let name = "altaf khan";
+        ler roll = "developer";
+        let char = 'a';
+        let num = "123";
+        let empty =" ";
+
+String Indicies:
+
+    let name = " ALTAF KHAN";
+
+            A   L   T   A   F   --  K   H   A   N
+    Index:  0   1   2   3   4   5   6    7   8   9 
+    name[0] ->A
+    name[1] ->L
+
+CONCATINATION:
+    adding strings together.
+
+    "Mohammad" + " " + "Altaf" + "Khan" = "Mohammad Altaf Khan"
+
+    "khan" + "1" =khan1
+
+iv.Undefined:
+    A variable that has not been assigned a value is of type Undefined.
+        >let a;
+        >a
+        <.undefined
+
+v.null:
+    The null value represents the intentional absence of any object value .
+    To be explicity assigned.
+        >let a = null;
+        >a
+        <.null
+
+
+            Part 2
+
+Console.log() :
+To write (log) a message on the Console
+
+    console.log("Apna college");
+    console.log(1234);
+    console.log(12 + 12);
+    console.log("Apna","college",123,12  -2);
+
+LINK JS FILE:
+<script src="app.js" > </script>
+
+TEMPLATE LITERALS:
+They are used to add embedded expression in a string.
+    let a = 5;
+    let b = 10;
+
+    console.log(`your pay ${a+b} rupees.`);
+    //console.log("your pay ",(a+b),"rupees");
+
+OPERATORS IN JS.
+
+Airthmatic Operator(+,-,*,/,**,%)
+Unary Operator(++,--)
+Assignment Operator(=,+=,-=,*=,/=,%=,**=)
+
+Comparison Operator:
+    Comparison operators compare 2 values
+   ( >,>=,<,<=,==,!=)
+    
+    == (compares value, not type)
+    eg;true for below:
+        "123" == 123 ,1 =='1' ,0 == ' ', 0==false, null == undefined
+    ===(compar type and value)
+    
+    false for below:
+     "123" === 123 ,1 === '1' ,0 === ' ', 0 === false, null === undefined
+
+     Comparison for Non Numbers
+     'a' > 'A'  //true
+     '*' < '&' //false
+
+Logical Operator:
+
+
+CONDITIONAL STATEMENTS:
+
+.if statement:
+    //some code before if 
+    if(some condition){
+        //do something
+    } 
+    //some code after if 
+
+.else-if statement:
+    if(condition1){
+        //do something 
+    }
+    else if(condition2){
+          //do something else
+    }
+    else if(condition3){
+          //do something else
+    }
+.else statement:
+    if(condition1){
+        //do something 
+     }
+    else {
+          //do something else
+     }
+
+.Nested if-else:
+    Nesting is writing if-else statement inside if-else statements.It can have many levels.
+    Eg:
+        if marks >= 33
+            if marks >= 80 
+                print 'o'
+            else 
+                print 'A'
+        else
+         print "Better luck next time!"
+.switch:
+    Used when we have some fixed values that we need to compare to.
+
+
+Logical Operator:
+Logical operators to combine expression.
+    &&(Logical And)  (exp1) &&(exp2)
+    ||(Logical OR)  (exp1) || (exp2)
+    !(Logical Not) !(exp)
+
+
+truthy & falsy: 
+    Everything in js is true or false.(in boolean context).
+    This doesn't mean their value is itself true or false,but they are treated as true or false
+    if taken in a boolean context.
+
+    falsy value:
+    false,0,-0,on(BigInt value),""(empty string),null,undefined,NaN
+
+    truthy value:
+    Everything else
+Note:
+    console.log("");
+    console.error("");
+    console.warn("");
+
+ALERT & PROMPT:
+
+Alert displays an alert message on the page.
+    alert("Something is wrong);
+
+Prompt displays a dialog box that asks user for some input.
+    prompt("Please enter your roll number");
+
+                part3
+
+STRING METHOD:
+
+    Methods- actions that can performed on objects.
+
+Format:
+stringName.method()
+
+let msg = "   Hello  ";
+    str.trim():
+        Trims whitespaces from both end of the string & returns a new one.
+
+        output:"hello",but the value msg remains same.
+
+String are immutabe in JS:
+    No changes can made to strings.
+    whenever we do try to make a change ,a new string is created and old string is remain same.
+
+let str = "Altaf Khan";
+
+str.toUpperCase() //"ALTAF KHAN"
+str.toLowerCase()//"altaf khan"
+
+String Methods with Argument:
+Argument is the some value that we past to method..
+
+Format:
+    stringName.method()
+
+    indexOf():
+    Returns the first index of occurance of some value in string. Or give -1 if value not found
+        let str = " ilovecodding;
+
+        str.indexOf("love"); //1
+        str.indexOf("j"); //-1 not found
+        str.indexOf("o");//2 (only one index)
+
+Method Chaining:
+    use one method after other.order of excution is left to right.
+        str.toUpperCase().trim()
+
+Slice Method:
+    Returns a part of the orginal string as a new string.
+
+    let str = "ilovecodding";
+
+    str.slice(5) //"codding"
+    str.slice(1,5) //"love"
+    str.slice(-num) = str.slice(length - num)
+    eg:str.slice(-2) = str.slice(12 - 2) //=>10 index print
+
+replace() method:
+    Search a value in a strings and returns  a new string with a value replaced .
+    let str = "ilovecodding";
+
+    str.replace("love","do"); //" idocodding";
+    str.replace("o","x"); //" ilxvecodding";
+
+Array (Data Structure):
+    linear collection of things.
+
+    visulaizing an array:
+    let num = [2,4,6,8];
+               0 1 2 3
+    
+Array Are Mutable:
+
+let fruit = ["apple","mango","litchi"];
+
+fruit[0] = "banana";
+
+print fruit = ["banana","mango","litchi"];
+
+Array Method:
+
+    push :add to end //str.push("tesla")
+    pop:delete from end & returns it. //str.pop()
+    unshift:add to start  // str.unshift("deepal")
+    shift:delete from start & returns it.// str.shift()
+
+indexOf:returns index of something
+    let fruit = ["apple","mango","litchi"];
+
+    fruit.indexOf("mango"); //1
+    fruit.indexOf("Mango"); //-1
+    fruit.indexOf("banana"); //-1
+
+includes:search for a value
+    fruit.includes("litchi");//true
+    fruit.includes("orange");//false
+
+concat:merge 2 arrays:
+
+    let primary = ['a','b','c'];
+    let secondary = ['x','y','z'];
+
+    let res = primary.concat(secondary);
+
+reverse:reverse an array
+    it also reverse orginal array
+    primary.reverse()
+
+slice:copies a portion of any array
+    let color = ["red","green","yellow","purple","orange"];
+    color.slice() //['red', 'green', 'yellow', 'purple', 'orange']
+    color.slice(2) //['yellow', 'purple', 'orange']
+    color.slice(2,3) //['yellow']
+    color.slice(-2)//['purple', 'orange']
+
+Array Methods:
+
+splice:removes / replace / add elements in place 
+    splice (start , deleteCount ,item0...itemN)
+    let color = ["red","green","yellow","purple","orange"];
+
+        color.splice(3);//delete all from index 3
+        color.splice(0,1)//delete 1 item from index 0 
+        color.splice(5,1,"goGreen","wait") // delete one item from index 5 and add two item from index 5
+
+
+sort:sorts an array
+
+let days = ["tuesday","monday","wednesday","thursday","saturday"];
+days.sort()//it sort alphabetically accending order
+
+let squ=[25,16,4,49,36,9]; //it change number into string then sort not work properly from number
+
+Array References ->address in memory
+
+[1] == [1] ->false ->both has different address in memory
+[1] === [1] -> false
+    let num = ['a','b'] // num ->refference value
+
+    Eg:
+    let arr = ['a','b','c']; //if you change a value of arr it also change the value of arrCopy because both has same address
+    
+    let arrCopy = arr;
+    arr.push('d');
+    arr === arrCopy ->true
+    arr == arrCopy ->true
+
+Constant Array:
+In const array we can change the value but not a whole array with new value .
+const arr = [1,2,3,4]; 
+
+Nested Array:
+array of arrays.
+
+let nums = [ [1,2],[3,4],[5,6]];
+
+    nums[rows index ][colum index]
+    nums[0][1]-->2
+
+                part-4
+
+Loop:
+   i. for-loop:
+
+    for(initialization;condition;updation){
+        //do something
+    }
+    Eg:
+    for(let i=0;i<5;i++){
+        console.log(i);
+    }
+
+Nestted loop:
+    for(let i = 1;i<3;i++){
+        for(let j = 1;j<=3;j++){
+            console.log(j);
+        }
+    }
+
+While loop:
+
+    ii. while(condition){
+    //do something
+    }
+
+    Eg:
+    let i=1;
+    while(i<5){
+        console.log(i);
+        i++;
+    }
+
+
+FOR OF LOOP:
+
+>you can use this loop to acces individual items of array or a string
+Syntax:
+
+    for(element of collection){
+        //do something
+    }
+
+                    part-5
+Functions in JS:
+
+    Function defining(telling js)
+
+        function funcName(){
+         //do something
+        }
+
+    Function calling (using the function)
+         fumcName();
+
+Function with Arguments:
+    values we pass to the function.
+
+     function funcName(arg1,arg2...){
+         //do something
+        }
+
+Return :
+    return keyword is used to written the some value from the function.
+    
+    input ------> Function(does some work) ---->output
+
+    function funcName(arg1,arg2...){
+        //do something
+        return val;
+    }
+
+SCOPE:
+    Scope determines the accessibillity  of variables , objects and functions from different parts of the code.
+
+    Function scope:
+        Variables define inside a function are not accessible (visible)  from outside the function.
+
+    Block:
+        Variables define inside a  {} block can not be accessed  from outside the block.
+
+
+    Lexical: 
+        a variable defined outside the function can be accessible inside another function defined after varialble
+        declaration 
+
+        The opposite is NOT  true . 
+        We can access outer function varialble from inner function but not access from outer function 
+        to inner function 
+        inner function is block 
+
+       note: //HOISTING
+
+
+Function Expression:
+
+const variable = function(arg1,arg2..){
+    //do or return something
+}
+    variable();
+
+Higher Order Functions :
+
+    A function that does one or both:
+        .takes one or multiple functions as Arguments
+        .returns a function 
+Example:
+
+function multiGreet(func,n){//Higher Order Functions
+    for(let i=0;i<n;i++){
+        func();
+    }
+}
+
+const greet = function(){
+    console.log("Marhaba!")
+}
+
+multiGreet(greet,4);    
+
+Returns a function:
+function oddEvenTest(request){
+    if(request == "odd"){
+        return function odd(n){
+           console.log(n%2 !=0);
+        }
+    }else if (request == "even"){
+        return function even(){
+            console.log(n%2 ==0);
+        }
+    }else{
+        console.log("Wrong number!");
+    }
+}
+
+Methods:
+    Actions that can be performed on an object.
+
+const calculator = {
+    add:function(a,b){
+        return a+b;
+    },
+    sub:function(a,b){
+        return a - b;
+    },
+    mul:function(a,b){
+        return a * b;
+    },
+    div:function(a,b){
+        return a / b;
+    },
+}
+console.log("Add:",calculator.add(2,2));
+
+Note: Internally array & string are object so, we can use Methods inside this.
+
+Methods shorthand:
+const calculator = {
+    add(a,b){
+        return a+b;
+    },
+    sub(a,b){
+        return a - b;
+    },
+    mul(a,b){
+        return a * b;
+    },
+    div(a,b){
+        return a / b;
+    },
+}                
+
+            part-7
+
+this  Keyword:
+    "This" keyword refers to an object that is excuting the  current piece of code.  
+
+try & catch :
+    The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block 
+
+note: callback is function that passes as argument or parameter  of the other function.
+
+MISCELLANEOUS TOPICS:
+Arrow Function:
+
+const funcName = (arg1,arg2 ....) => {
+        //function defination
+    }
+
+    Eg:
+    const sqr = n =>{
+        console.log(n**2);
+    }
+    const hello = () =>{
+        console.log("hello ,world");
+    }
+    const sum = (a,b) =>{
+        console.log(a+b);
+    }
+
+Implicit return:
+    const func = (arg1,arg2..) =>(values);
+Eg: const mod = (a,b) =>(a%b);
+
+Set Timeout:
+    >the callback function execute after timeout!
+    setTimeout(function,timeout) //function --> callback : timeout --> time in millisecond(ms);
+
+Set Interval:
+    >the callback function executed after every timeout or interval!
+    setInterval(func,interval or timeout)
+
+
+to stop the function : clearInterval(id)
+        eg: let id = setInterval(func,interval or timeout);
+
+
+"this" with arrow function:
+
+arrow -->lexial scope ,parent scope
+function -->scope --> depends on calling object
+
+
+#key Points:
+    global scope--> window in browsers or global in Node.js
+    Regural Functions --> window
+    Object Methods --> object
+    Arrow functions --> do not have their own this; they inherit this from the surrounding context.
+
+                        part-8

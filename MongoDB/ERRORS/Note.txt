@@ -1,0 +1,67 @@
+ERROR HANDLERS:
+    custom
+
+    Error handling middleware.
+
+    app.use((err,req,res,next)=>{
+        console.log("------error------");
+        next(err);
+    })
+
+    custom:
+    class ExpressError exteds Error{
+        constructor(status,message){
+            super();
+            this.status = status;
+            this.message = message;
+        }
+    }
+
+    app.use((err,req,res,next)=>{
+        let {status = 500,message="SOME ERROR"} = err;
+        res.status(status).send(message);
+    });
+
+    ACTIVITY:
+    ERROR CLASS:
+        Create an admin route & send error with a 403 status code.
+
+
+HANDLING Async Errors:
+
+//new show route 
+
+app.get("/chats/:id",async (req,res,next)=>{
+    let {id} = req.params;
+    let chat = await Chat.findById(id);
+    if(!chat){
+        next(throw new ExpressError(404,"Page Not Found"));
+    }
+    res.render("edit.ejs",{chat});
+})
+    id->doesnot exist
+    validation error
+
+
+    USING wrapAsync: insted of try and catch 
+
+
+    overall,
+    1.normal Errors
+    2.async -> exprss error
+    3.try-catch (bulky)
+    4.asyncWrap->wrap the call back
+
+MONGOOSE ERRORS:
+    const handleValidationErr = (err) =>{
+        console.log("Validation error occured!");
+        return err;
+    }
+
+    app.use((err,req,res)=>{
+        console.log(err.name);
+        if(err === 'ValidationError){
+            err = handleValidationErr(err);
+        }
+        next(err);
+    })

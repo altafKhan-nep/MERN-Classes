@@ -1,0 +1,34 @@
+/* div{
+    height: 100px;
+    width:100px;
+    background-color: green;
+    margin: 6px;
+    display: inline-block;
+    
+}
+#third{
+    display: none;
+} */
+
+h1{
+    border:5px solid black;
+   margin:10%;
+  
+}
+
+#outer{
+    width:500px;
+    height:500px;
+    background-color: green;
+    border: 2px solid cornflowerblue;
+}
+
+
+#inner{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    margin-left: 30%;
+    margin-top: 45%;
+}
+

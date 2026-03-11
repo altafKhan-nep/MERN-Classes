@@ -1,0 +1,32 @@
+Creating the Model:
+
+Chat will have: (_id,from,to,msg,crated_at)
+
+Initialize Database:
+    init.js
+
+CHATS:
+    index Route:
+        GET /chats //show all chats
+
+CHATS:
+    New & create a Route
+    add chart button (index ejs)
+    i.GET /chats/new -> form render (msg) 
+    ii.POST / chats (db insert chat)
+
+USING DATE:
+   <%= chat.crated_at.toString().split(" ")[4] %>< br>
+   <%= chat.crated_at.toString().split(" ").slice(0,4).join(" ") %>< br>
+
+
+CHATS:
+i.edit button
+ii.
+    GET /chats/:id/edit ->edit form display - mag edit
+    PUT /chats/:id (change saved)
+   #### task:add updated_at
+
+CHATS:
+    Destroy Route
+    DELET /chats/:id -> delete chat with id

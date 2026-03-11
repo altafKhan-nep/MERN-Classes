@@ -1,0 +1,79 @@
+Middleware:
+    It is an intermediary
+
+    REQEST ----> MIDDLEWARE ----> RESPONSE
+
+    In Express:
+        Middleware in Express are functions that come into play after the server receives
+        the request and before the respnse is sent to the client.
+
+    Common middleware functions :
+       . methodOverride
+       . bodyParser
+       . express.static
+       . express.urlencoded
+
+       app.use(express.urlencoded({extended:true}));
+       app.use(express.static(path.join(__dirname,"/public")));
+
+    Properties:
+        . it can access req,res object 
+        . chaining
+        . send a respnse
+
+    What do middlewares do?
+    Middleware functions can perform the following tasks:
+    .Execute any code.
+    .Make changes to the request and the response objects.
+    .End the request-respnse cycle.
+    .Call the next middleware function in the stack.
+
+    Our First Middeware:
+
+        app.use(middleware);
+        app.use(()=>{
+            console.log("hey, i am middleware");
+        });
+
+        using req & res object in middleware
+
+        app.use((req,res)=>{
+            res.send("bye!");
+        });
+
+    Using next:
+    The next middleware function is commonly denoted by a variable named next.
+
+    app.use((req,res,next)=>{
+        consol.log('Time',Date.now());
+        next();
+    })  
+
+    if the current middleware function does not end the request-response cycle ,it must 
+    cal next() to pass control to the next middleware function.
+     https://blog.bitsrc.io/5-express-middleware-libraries-every-developer-should-know-94e2728f7503
+
+    Creating Utility Middeware:
+    
+    logger ->log
+    
+    app.use((req,res,next)=>{
+        req.responseTime = new Date(Date.now()).toString();
+        console.log(req.method,req.path,req.respnseTime,req.hostname);
+        next();
+    });
+
+    Exploring app.use();
+
+    Activity:
+
+    API Token as Query String
+        Let's create a middle-ware for an api that checks if the access token was passed in the
+        query string or not.
+
+        /api -> res=>data if req /api?token=give access
+
+
+    Handling Errors:
+    Express Default Error Handler
+
